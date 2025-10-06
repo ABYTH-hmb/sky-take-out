@@ -31,4 +31,7 @@
         update dish set name = #{name}, category_id = #{categoryId}, price = #{price}, image = #{image}, description = #{description}, status = #{status}, update_time = #{updateTime}, update_user = #{updateUser}
         where id = #{id}
     </update>
+    <select id="list" resultType="com.sky.entity.Dish">
+        select * from dish where status = 1 and category_id = #{categoryId}
+    </select>
 </mapper>
